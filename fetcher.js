@@ -10,14 +10,11 @@ const fPath = process.argv[3];
 const downLoader = (url, fPath) => {
   
   request(url, (error, response, body) => {
-    //console.log(error);
-    console.log("*********************" + response);
+    
     if (error) {
       console.log('Failed to download:', error); // Print the error if one occurred
-      
     };
     if (!response || response.statusCode !== 200) {
-    
       console.log(`URL --> ${url} BROKEN!! \n ${error}`);
       process.exit();
     };
